@@ -22,9 +22,10 @@ class App extends React.Component {
     };
   }
 
-  clickHandler() {
-    console.log('click');
-    // this.setState
+  clickHandler(index) {
+    console.log(index);
+    console.log(this);
+    this.setState({currentVideo: window.exampleVideoData[index]});
   }
 
   render() {
@@ -43,7 +44,7 @@ class App extends React.Component {
           </div>
         </div>
         <div className="col-md-5">
-          <VideoList videos={this.state.videos} clickHandler={this.clickHandler}/>
+          <VideoList videos={this.state.videos} clickHandler={this.clickHandler.bind(this)}/>
        </div>
       </div>
     );
