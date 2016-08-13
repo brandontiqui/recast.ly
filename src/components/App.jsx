@@ -17,6 +17,7 @@ class App extends React.Component {
     this.state = {
       // video: this.props.searchYouTube[0],
       videos: window.exampleVideoData
+      // videos: this.props.searchYouTube
     };
   }
 
@@ -25,13 +26,15 @@ class App extends React.Component {
     //   var current = this.state.videos[0];
     //   var videos = this.state.videos;
     // }
-    console.log(this.state.videos);
+    // console.log(this.state.videos);
 
     return (
       <div>
         <Nav />
         <div className="col-md-7">
-          <VideoPlayer video={this.state.videos[0]}/>
+          <div id="current-video">
+            <VideoPlayer video={this.state.videos[0]}/>
+          </div>
         </div>
         <div className="col-md-5">
           <VideoList videos={this.state.videos}/>
