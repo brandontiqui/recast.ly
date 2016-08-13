@@ -23,8 +23,6 @@ class App extends React.Component {
   }
 
   clickHandler(index) {
-    console.log(index);
-    console.log(this);
     this.setState({currentVideo: window.exampleVideoData[index]});
   }
 
