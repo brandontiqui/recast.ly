@@ -13,16 +13,18 @@
 class App extends React.Component {
   constructor(props) {
     super(props); 
-    console.log(props);
+    // console.log(window.exampleVideoData);
     this.state = {
-      currentVideo: this.props.searchYouTube[0],
-      videos: this.props.searchYouTube
+      // video: this.props.searchYouTube[0],
+      videos: this.props.vids
     };
   }
 
   render() {
-    var current = this.state.currentVideo;
-    var videos = this.state.videos;
+    if (this.state.videos && this.state.videos[0]) {
+      var current = this.state.videos[0];
+      var videos = this.state.videos;
+    }
 
     return (
       <div>
