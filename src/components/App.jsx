@@ -13,27 +13,28 @@
 class App extends React.Component {
   constructor(props) {
     super(props); 
-    // console.log(window.exampleVideoData);
+
     this.state = {
       // video: this.props.searchYouTube[0],
-      videos: this.props.vids
+      videos: window.exampleVideoData
     };
   }
 
   render() {
-    if (this.state.videos && this.state.videos[0]) {
-      var current = this.state.videos[0];
-      var videos = this.state.videos;
-    }
+    // if (this.state.videos && this.state.videos[0]) {
+    //   var current = this.state.videos[0];
+    //   var videos = this.state.videos;
+    // }
+    console.log(this.state.videos);
 
     return (
       <div>
         <Nav />
         <div className="col-md-7">
-          <VideoPlayer video={current}/>
+          <VideoPlayer video={this.state.videos[0]}/>
         </div>
         <div className="col-md-5">
-          <VideoList videos={videos}/>
+          <VideoList videos={this.state.videos}/>
        </div>
       </div>
     );
