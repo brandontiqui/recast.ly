@@ -16,9 +16,15 @@ class App extends React.Component {
 
     this.state = {
       // video: this.props.searchYouTube[0],
-      videos: window.exampleVideoData
+      videos: window.exampleVideoData,
+      currentVideo: window.exampleVideoData[0]
       // videos: this.props.searchYouTube
     };
+  }
+
+  clickHandler() {
+    console.log('click');
+    // this.setState
   }
 
   render() {
@@ -33,11 +39,11 @@ class App extends React.Component {
         <Nav />
         <div className="col-md-7">
           <div id="current-video">
-            <VideoPlayer video={this.state.videos[0]}/>
+            <VideoPlayer video={this.state.currentVideo}/>
           </div>
         </div>
         <div className="col-md-5">
-          <VideoList videos={this.state.videos}/>
+          <VideoList videos={this.state.videos} clickHandler={this.clickHandler}/>
        </div>
       </div>
     );
