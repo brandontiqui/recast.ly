@@ -22,19 +22,14 @@ class App extends React.Component {
     };
   }
 
-  clickHandler(index) {
-    this.setState({currentVideo: window.exampleVideoData[index]});
+  clickHandler(video) {
+    this.setState({currentVideo: video});
   }
 
   render() {
-    // if (this.state.videos && this.state.videos[0]) {
-    //   var current = this.state.videos[0];
-    //   var videos = this.state.videos;
-    // }
-    // console.log(this.state.videos);
 
     return (
-      <div>
+        <div>
         <Nav />
         <div className="col-md-7">
           <div id="current-video">
