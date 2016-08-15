@@ -51,7 +51,7 @@ class App extends React.Component {
     return (
         <div>
         <Nav 
-          handleSearchInputChange={this.getYouTubeVideos.bind(this)}
+          handleSearchInputChange={_.debounce( this.getYouTubeVideos.bind(this), 5000 )}
         />
         <div className="col-md-7">
           <div id="current-video">
