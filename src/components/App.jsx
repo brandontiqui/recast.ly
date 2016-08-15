@@ -50,7 +50,9 @@ class App extends React.Component {
 
     return (
         <div>
-        <Nav />
+        <Nav 
+          handleSearchInputChange={this.getYouTubeVideos.bind(this)}
+        />
         <div className="col-md-7">
           <div id="current-video">
             <VideoPlayer video={this.state.currentVideo}/>
