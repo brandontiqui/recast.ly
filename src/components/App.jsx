@@ -22,8 +22,28 @@ class App extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.getYouTubeVideos('hack reactor');
+  }
+
+  getYouTubeVideos(query) {
+    var options = {
+      key: this.props.API_KEY,
+      query: query
+    };
+
+    this.props.searchYouTube(options, (videos) =>
+      this.setState({
+        videos: videos,
+        currentVideo: videos[0]
+      })
+    );
+  }
+
   clickHandler(video) {
-    this.setState({currentVideo: video});
+    this.setState({
+      currentVideo: video
+    });
   }
 
   render() {
